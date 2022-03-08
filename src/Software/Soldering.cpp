@@ -19,13 +19,13 @@ Soldering::Soldering(){
 }
 
 void Soldering::SetTargetTemp(Button & btn_up, Button & btn_down, unsigned long & curr_time){
-    static int counter = 0;
+    // static int counter = 0;
     btn_up.CicleNHoldClick(curr_time);
     if(btn_up.cicle_press == true){
         if(temp_max > temp_now){
             temp_now = temp_now + 10;
         }
-        Serial.println(counter ++);  
+        // Serial.println(counter ++);  
         btn_up.cicle_press = false;
     }
 
