@@ -16,6 +16,7 @@ class Soldering{
         int temp_max;
         int temp_min;
         int temp_now;
+        bool heating;
         bool celcius;
         bool fahrenheit;
 
@@ -24,10 +25,13 @@ class Soldering{
 
         //Pages
         int num_pags;
+        int curr_page;
+
+        //Others
+        bool left_handed;
 
         Soldering();
-
-        void SetTargetTemp(Button & btn_up, Button & btn_down, unsigned long & curr_time);
+        ~Soldering();
     
 };
 

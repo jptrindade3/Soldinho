@@ -6,7 +6,6 @@ class Button{
         int BUTTON_PIN; //Define o pino de leitura no botão do arduíno
         unsigned long debounce_time = 50; // Tempo, em ms, definido para evitar o problema de bouncing (instabilidade transitória no sinal do botão)
         unsigned long last_change_time; // Salva a última vez que o botão foi apertado ou soltado
-        bool change_locker; // só permite o comando de hold quando estiver destravado (false)
 
         bool curr_btn_state; //Captura o estado atual do botão (apertado ou não)
         bool last_btn_state; //Captura o estado anterior do botão (apertado ou não)
@@ -14,13 +13,15 @@ class Button{
         bool pressed; // Retorna verdadeiro se o botão for apertado, falso se ele for solto
 
         unsigned long hold_time; // Tempo, em ms, definido para evitar o problema de bouncing (instabilidade transitória no sinal do botão)
-        bool holding; // Retorna verdadeiro se o botão for segurado
 
+
+    public:
         bool tilted;
         bool last_tilted_state;
         bool sleeping;
-
-    public:
+        
+        bool holding; // Retorna verdadeiro se o botão for segurado
+        bool change_locker; // só permite o comando de hold quando estiver destravado (false)
         bool cicle_press;
 
         //-----|    CONSTRUTOR & DESTRUTOR  |-----//
